@@ -1,0 +1,258 @@
+.body .left-sidenav {
+    background-color: $left-sidenav-bg;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    -webkit-box-shadow: 0px 0px 3px rgba(31, 30, 47, 0.05);
+    box-shadow: 0px 0px 3px rgba(31, 30, 47, 0.05);
+    -webkit-transition: .3s;
+    transition: .3s;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    .brand {
+        text-align: center;
+        height: 74px;
+        border-bottom: $border-bottom-color-blue;
+        .logo {
+            line-height: 74px;
+            .logo-sm {
+                height: 26px;
+                display: inline-block;
+            }
+            .logo-lg {
+                display: inline-block;
+                height: 22px;
+                margin-left: 2px;
+            }
+        }
+    }
+    .left-sidenav-menu {
+        padding-left: 0;
+        margin-bottom: 0;
+        padding: 24px;
+        li {
+            list-style: none;
+            display: block;
+            width: 100%;
+            margin-top: 6px;
+            >a {
+                display: flex;
+                align-items: center;
+                padding: 6px 0px;
+                color: #68728c;
+                transition: all 0.3s ease-out;
+                font-weight: 300;
+                .menu-icon {
+                    width: 18px;
+                    height: 18px;
+                    color: #7081b9;
+                    fill: rgba(#7081b9, 0.12);
+                    margin-right: 6px;
+                }
+                &.active {
+                    .menu-icon {
+                        color: #6374ff;
+                        fill: rgba(#6374ff, 0.12);
+                    }
+                }
+                &:hover {
+                    color: #e6e6e6;
+                    i {
+                        color: #2f6bf9;
+                    }
+                }
+                i {
+                    width: 25px;
+                    display: inline-block;
+                    font-size: 16px;
+                    opacity: 0.9;
+                    color: #a6aed4;
+                    &.ti-control-record {
+                        font-size: 8px;
+                        vertical-align: middle;
+                        margin-right: 0;
+                    }
+                }
+                span {
+                    i {
+                        color: #303e67;
+                    }
+                }
+            }
+            ul {
+                padding: 0 0 0 25px;
+                li {
+                    >a {
+                        padding: 6px 0;
+                        color: #68728c;
+                        font-size: 13px;
+                        border-left: none;
+                        &:hover {
+                            color: #2f6bf9;
+                            i {
+                                color: #1761fd;
+                            }
+                        }
+                    }
+                }
+            }
+            &.mm-active {
+                .mm-active {
+                    >a {
+                        color: #6374ff;
+                        &.active {
+                            color: #2f6bf9;
+                        }
+                        i {
+                            color: #1761fd;
+                        }
+                    }
+                    .mm-show {
+                        li {
+                            a.active {
+                                color: #2f6bf9;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+                >a {
+                    color: #fff;
+                    border-radius: 4px;
+                    i {
+                        color: #fff;
+                    }
+                }
+                .nav-item.active {
+                    a.nav-link.active {
+                        background-color: transparent;
+                        color: #2f6bf9;
+                        i {
+                            color: #2f6bf9;
+                        }
+                    }
+                }
+            }
+        }
+        .menu-arrow {
+            margin-left: auto;
+            i {
+                width: 15px;
+            }
+        }
+    }
+    .sidebar-nav .metismenu {
+        display: flex;
+        flex-direction: column;
+        background: $left-sidenav-bg;
+    }
+}
+
+.page-wrapper {
+    flex: 1;
+    padding: 0;
+    display: block;
+    margin-left: 250px;
+    .page-content {
+        width: 100%;
+        position: relative;
+        min-height: 100vh;
+        padding: 0 15px 60px 15px;
+        display: inline-block;
+    }
+}
+
+// Enlarge menu
+.enlarge-menu {
+    .left-sidenav {
+        display: none;
+        .brand {
+            background-color: #ffffff;
+            ;
+        }
+    }
+    .page-wrapper {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        display: block !important;
+    }
+    .body .left-sidenav {
+        position: absolute;
+        overflow-y: auto;
+        z-index: 10;
+        bottom: 0;
+        top: 74px;
+        margin-top: 0;
+        .brand {
+            display: none;
+            width: 70px;
+            .logo-lg {
+                display: none !important;
+            }
+        }
+    }
+    .page-wrapper {
+        margin: 0;
+    }
+    .page-content {
+        min-height: 100vh;
+        padding: 0 0 50px 0;
+    }
+}
+
+//top bar
+.topbar {
+    width: 100%;
+}
+
+.navbar-custom {
+    background: #fff;
+    min-height: 74px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #e3ebf6;
+    .nav-link {
+        padding: 0 0.75rem;
+        color: #7081b9;
+        line-height: 74px;
+        max-height: 74px;
+        .nav-icon {
+            font-size: 18px;
+        }
+    }
+    .topbar-nav {
+        height: 74px;
+        li {
+            float: left;
+            &.show {
+                .nav-link {
+                    background-color: lighten(#fff, 3%);
+                    color: #303e67;
+                }
+            }
+            .topbar-icon {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+    ul {
+        display: inline-block;
+    }
+    .float-right {
+        float: right;
+    }
+}
+
+.button-menu-mobile {
+    border: none;
+    color: #7081b9 !important;
+    width: 60px;
+    background-color: transparent;
+    cursor: pointer;
+}
